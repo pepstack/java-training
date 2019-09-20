@@ -1,0 +1,106 @@
+###########################################################
+# type: optional string default
+# help: mandantory string
+# $APPHOME: 会自动替换为 python 程序所在路径
+# $APPNAME: 会自动替换为 python 程序名
+###########################################################
+main:
+    title: $APPNAME
+    description: $APPHELP
+    options:
+        - log_path:
+            optarg: '-O --log-path'
+            action: store
+            type: string
+            default: '/var/log/pyapplog'
+            help: 'path to app log file'
+            metavar: LOGPATH
+
+        - log_level:
+            optarg: '-L --log-level'
+            action: store
+            type: string
+            default: DEBUG
+            help: 'log level: DEBUG, WARN, INFO, ERROR'
+            metavar: LOGLEVEL
+
+        - log_config:
+            optarg: '-C --log-config'
+            default: '$APPHOME/config/logger.config'
+            help: 'path to logger config file'
+            metavar: LOGCONFIG
+
+        - logger:
+            optarg: '--logger'
+            default: 'main'
+            help: 'logger name in log config file'
+            metavar: LOGGER
+
+        - springboot:
+            optarg: '--springboot'
+            default: '2.1.8'
+            help: 'SpringBoot Version'
+            metavar: VERSION
+
+        - group:
+            default: 'com.pepstack'
+            help: 'Project Metadata: Group'
+            metavar: GROUP
+
+        - artifact:
+            default: 'sb2-demo'
+            help: 'Project Metadata: Artifact'
+            metavar: ARTIFACT
+
+        - name:
+            help: 'Options: Name'
+            metavar: NAME
+
+        - ver:
+            default: "0.0.1-SNAPSHOT"
+            help: 'Artifact version'
+            metavar: VER
+
+        - description:
+            default: "Demo project for Spring Boot2"
+            help: 'Options: Description'
+            metavar: DESCR
+
+        - packagename:
+            help: 'Options: PackageName'
+            metavar: PKGNAME
+
+        - packaging:
+            default: "Jar"
+            help: 'Options: Packaging'
+            metavar: PKGNAME
+
+        - java:
+            default: "8"
+            help: 'Options: Java'
+            metavar: JAVAVER
+
+        - port:
+            default: "8080"
+            help: 'server port'
+            metavar: PORT
+
+        - context_path:
+            help: 'context path'
+            metavar: PATH
+
+        - create:
+            optarg: '--create'
+            action: store_true
+            default: False
+            help: 'create a new sb2 web project'
+            
+        - force:
+            action: store_true
+            default: False
+            help: 'force to overwrite existed project'
+
+        - run:
+            action: store_true
+            default: False
+            help: 'start project using: mvn spring-boot:run'

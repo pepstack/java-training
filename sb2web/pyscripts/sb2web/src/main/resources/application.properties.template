@@ -1,0 +1,3 @@
+# url path
+server.port={{serverPort}}
+server.servlet.context-path={{contextPath}}
