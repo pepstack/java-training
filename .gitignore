@@ -1,5 +1,9 @@
+# ignore sub git folder
+.git/
+
 # Compiled class file
 *.class
+*.pyc
 
 # Log file
 *.log
